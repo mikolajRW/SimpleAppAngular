@@ -1,0 +1,32 @@
+<h1>View for presesting detailed categories and its element</h1>
+
+<div *ngFor="let driver of drivers">
+    <ul>
+      <li>Driver's id: {{driver.driverId}}</li>
+      <li>Driver's pesel: {{ driver.pesel }}</li>
+      <li>Driver's name: {{driver.name}}</li>
+      <li>Driver's surname: {{driver.surname}}</li>
+      <li>Driver's age: {{driver.age}}</li>
+    </ul>
+      <h5>Cars of {{driver.surname}}:</h5>
+      <button [routerLink] = "['/addElem', driver.driverId]">ADD</button>
+      <div *ngFor="let car of (driver.driverId | carsForDriver:carService | async)">
+        <ul>
+            <li>Vin number - {{car.vin}} <button (click)="onDelete(car.id);refresh()">DELETE</button>
+            <button [routerLink] = "['/editElem', car.id]">EDIT</button></li>
+            
+        </ul>
+      </div>
+    <br/>
+    <br/>  
+</div>
+
+<h3>Element's Menu</h3>
+<nav>
+    <a class="nav-link" href="/addElem">Add Cars</a>
+    <br/>
+    <a class="nav-link" href="/editElem">Edit Cars</a>
+    <br/>
+    <a class="nav-link" href="/detailsElem">Get Details About Cars</a>
+</nav>
+

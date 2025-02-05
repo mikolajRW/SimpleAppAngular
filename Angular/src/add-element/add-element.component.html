@@ -1,0 +1,17 @@
+<h3>View for adding new element</h3>
+
+<div>
+    <label for="vin">Car's VIN: </label>
+    <input id="vin" #carVin/>
+    <br/>
+    <label for="brand">Car's Brand: </label>
+    <input id="brand" #carBrand/>
+    <br/>
+    <label for="model">Car's Model: </label>
+    <input id="model" #carModel/>
+    <br/>
+
+    <button (click)="add(carVin.value, carBrand.value, carModel.value);
+    carVin.value=''; carBrand.value=''; carModel.value=''"
+    [routerLink]="['/viewDetailed']">Add Car</button>
+</div>
