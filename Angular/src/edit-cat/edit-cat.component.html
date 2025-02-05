@@ -1,0 +1,32 @@
+<h1>View for editing category (driver)</h1>
+
+
+<h5>Choose which driver you want to edit</h5>
+<div *ngFor="let driver of drivers">
+    <a>
+      driver's id : {{ driver.driverId }}
+    </a>
+    <button (click) = "saveId(driver.driverId)">EDIT</button>
+</div>
+<br/>
+<div>
+    <h5>Driver to edit - {{id}}</h5>
+</div>
+<br/>
+<div>
+<label for="driver_pesel">Driver's pesel: </label>
+    <input id="driver_pesel" #driverPesel/>
+    <br/>
+    <label for="driver_name">Driver's name: </label>
+    <input id="driver_name" #driverName />
+    <br/>
+    <label for="driver_surname">Driver's surname: </label>
+    <input id="driver_surname" #driverSurname/>
+    <br/>
+    <label for="driver_age">Driver's age: </label>
+    <input id="driver_age" #driverAge/>
+    <br/>
+    <button (click)="onUpdate(driverName.value, driverSurname.value, driverPesel.value, driverAge.value);
+    driverName.value=''; driverSurname.value=''; driverPesel.value='';driverAge.value=''">Update Driver</button>
+</div>
+

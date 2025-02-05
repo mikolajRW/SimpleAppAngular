@@ -1,0 +1,11 @@
+<h1>View for presenting list of categories</h1>
+
+<div *ngFor="let driver of drivers">
+<a>
+  driver's pesel: {{ driver.pesel }}
+</a>
+<button (click)="onDelete(driver); refresh()">Delete</button>
+
+</div>
+
+

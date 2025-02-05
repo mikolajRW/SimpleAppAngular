@@ -1,0 +1,17 @@
+<h3>View for editing elements (Cars)</h3>
+<br/>
+<div>
+    <label for="vin">Car's VIN: </label>
+    <input id="vin" #carVin/>
+    <br/>
+    <label for="brand">Car's Brand: </label>
+    <input id="brand" #carBrand/>
+    <br/>
+    <label for="model">Car's Model: </label>
+    <input id="model" #carModel/>
+    <br/>
+
+    <button (click)="onUpdate(carVin.value, carBrand.value, carModel.value);
+    carVin.value=''; carBrand.value=''; carModel.value='';"
+    [routerLink]="['/viewDetailed']">Edit Car</button>
+</div>
