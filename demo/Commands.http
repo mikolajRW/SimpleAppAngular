@@ -1,0 +1,59 @@
+### GET ALL DRIVERS
+GET http://localhost:8080/api/drivers
+
+### GET PARTICULAR DRIVER
+GET http://localhost:8080/api/drivers/a1234567-89ab-4cde-bf01-23456789abcd
+
+### ADD NEW DRIVER
+POST http://localhost:8080/api/drivers
+Content-Type:  application/json
+
+{
+  "pesel": "011111111",
+  "surname": "Kowal"
+}
+
+### DELETE PARTICULAR DRIVER
+DELETE http://localhost:8080/api/drivers/a1234567-89ab-4cde-bf01-23456789abcd
+
+### UPDATE PARTICULAR DRIVER
+PATCH http://localhost:8080/api/drivers/b2345678-90bc-4def-af12-34567890bcde
+Content-Type:  application/json
+
+{
+  "pesel": "022222222",
+  "surname": "Nowak"
+}
+
+### GET ALL CARS
+GET http://localhost:8080/api/cars
+
+### GET PARTICULAR CAR
+GET http://localhost:8080/api/cars/c3456789-01cd-4efa-bf23-45678901cdef
+
+### GET CARS FROM PARTICULAR DRIVER
+GET http://localhost:8080/api/drivers/a1234567-89ab-4cde-bf01-23456789abcd/cars
+
+### DELETE CAR
+DELETE http://localhost:8080/api/cars/c3456789-01cd-4efa-bf23-45678901cdef
+
+### UPDATE CAR
+PATCH http://localhost:8080/api/cars/d4567890-12de-4fab-cf34-56789012defa
+Content-Type:  application/json
+
+{
+  "brand": "BMW",
+  "model": "M3",
+  "vin": "AKAKAKAKAA"
+}
+
+
+### ADD CAR, WITH ADDING TO CATEGORY
+POST http://localhost:8080/api/drivers/a1234567-89ab-4cde-bf01-23456789abcd/cars
+Content-Type:  application/json
+
+{
+  "brand": "AUDI",
+  "model": "S7",
+  "vin": "WOOOOOOZ"
+}
